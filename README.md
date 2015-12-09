@@ -59,3 +59,8 @@ return $this->respondNotAcceptable(
     'Mugwumps are not found in swamps',
     ['location' => 'desert']);
 ```
+
+## Choosing a Status Code
+
+See https://httpstatuses.com/ and http://racksburg.com/choosing-an-http-status-code/
+
