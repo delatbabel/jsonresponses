@@ -1,16 +1,6 @@
 # jsonresponses
 Common JSON responses for an API built with Laravel 5.1. 
 
-## Preface
-
-Many APIs have generic response formats for returning a success/fail response, a
-response code, a message, and some data.  There are a few packages out there including
-Syndra (Mario Basic), which do similar things but I gone back to this, which was my
-original implementation as a trait, because it does all of what I what I need to do.
-
-This provides generic JSON responses for when a resource is created, updated, destroyed,
-indexed, etc, as well as a generic error format.
- 
 ## Features
 
 This trait does the following:
@@ -64,3 +54,43 @@ return $this->respondNotAcceptable(
 
 See https://httpstatuses.com/ and http://racksburg.com/choosing-an-http-status-code/
 
+# Architecture
+
+## Rationale
+
+Many APIs have generic response formats for returning a success/fail response, a
+response code, a message, and some data.  There are a few packages out there including
+Syndra (Mario Basic), which do similar things but I gone back to this, which was my
+original implementation as a trait, because it does all of what I what I need to do.
+
+This provides generic JSON responses for when a resource is created, updated, destroyed,
+indexed, etc, as well as a generic error format.
+
+## To Trait Or Not To Trait?
+
+Many developers have derided the use of PHP 5.4+ traits on the basis that they are
+really just methods to hide simple cut/paste code.  Certainly they have their disadvantages,
+not the least of which is difficulty in providing stand-alone tests for them.
+
+In this case I decided to implement this as a trait anyway, because I wanted all of
+my API controllers to return an identical response format, and this was a simple way
+of doing it.
+
+A lot of software designers have suggested that traits should not provide data, only
+methods, which makes them look more exactly like Ruby's "mixins".  However PHP does
+provide limited capability for traits to hold data and so I have implemented a simple
+protected variable to store the response code between calls.
+
+## Response Format
+
+The response format emitted by this trait will look like this (in JSON):
+
+response: {
+    success: true,      // true or false
+    message: message,   // arbitrary message goes here
+    response_code: code // response code goes here
+},
+data: { ...
+}                       // arbitrary data structure goes here
+
+The HTTP response code is repeated inside the response hash for easy access.
