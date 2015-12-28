@@ -85,6 +85,7 @@ protected variable to store the response code between calls.
 
 The response format emitted by this trait will look like this (in JSON):
 
+```
 response: {
     success: true,      // true or false
     message: message,   // arbitrary message goes here
@@ -92,5 +93,6 @@ response: {
 },
 data: { ...
 }                       // arbitrary data structure goes here
+```
 
 The HTTP response code is repeated inside the response hash for easy access.
