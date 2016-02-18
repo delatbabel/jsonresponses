@@ -245,6 +245,6 @@ trait JsonResponses
      */
     public function respond($data, $headers = [])
     {
-        return new JsonResponse($data, $this->getResponseCode(), $headers);
+        return new JsonResponse($data, $this->getResponseCode(), $headers, JSON_PRETTY_PRINT);
     }
 }
