@@ -182,6 +182,19 @@ trait JsonResponses
             ->respondMessage(false, $message, $data);
     }
 
+    /**
+     * Set a response code to 422 and a response message
+     *
+     * @param string $message
+     * @param array $data
+     * @return array
+     */
+    public function respondUnprocessableEntity($message = 'Unprocessable!', $data = [])
+    {
+        return $this->setResponseCode(IlluminateResponse::HTTP_UNPROCESSABLE_ENTITY)
+            ->respondMessage(false, $message, $data);
+    }
+
     //
     // SERVER ERROR RESPONSES, 500+
     //
