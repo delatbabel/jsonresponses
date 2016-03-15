@@ -43,6 +43,18 @@ use Illuminate\Support\Facades\Session;
  *     'Mugwumps are not found in swamps',
  *     ['location' => 'desert']);
  * </code>
+ *
+ * #### Automatically Handling a Validation Exception
+ *
+ * This will generate a 422 response containing the errors from the validation.
+ *
+ * <code>
+ * try {
+ *     $this->validate($request, $validationRules);
+ * } catch (HttpResponseException $e) {
+ *     return $this->handleValidationException($e);
+ * }
+ * </code>
  */
 trait JsonResponses
 {
