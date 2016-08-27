@@ -7,11 +7,11 @@
 
 namespace Delatbabel\JsonResponses;
 
-use Illuminate\Support\MessageBag;
-use Illuminate\Http\Response as IlluminateResponse;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Exception\HttpResponseException;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Response as IlluminateResponse;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\MessageBag;
 
 /**
  * Trait JsonResponses
