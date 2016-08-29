@@ -1,4 +1,10 @@
-# jsonresponses
+# JSON Responses
+
+[![Build Status](https://travis-ci.org/delatbabel/jsonresponses.png?branch=master)](https://travis-ci.org/delatbabel/jsonresponses)
+[![StyleCI](https://styleci.io/repos/47661797/shield)](https://styleci.io/repos/47661797)
+[![Latest Stable Version](https://poser.pugx.org/delatbabel/jsonresponses/version.png)](https://packagist.org/packages/ddpro/jsonresponses)
+[![Total Downloads](https://poser.pugx.org/delatbabel/jsonresponses/d/total.png)](https://packagist.org/packages/delatbabel/jsonresponses)
+
 Common JSON responses for an API built with Laravel 5.1. 
 
 ## Features
